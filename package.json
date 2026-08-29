@@ -1,0 +1,19 @@
+{
+  "name": "ecommerce_backend",
+  "version": "1.0.0",
+  "description": "ecommerce project(mern)",
+  "license": "ISC",
+  "author": "rohan",
+  "type": "commonjs",
+  "main": "server.js",
+  "scripts": {
+    "test": "node d.js",
+    "start": "node server.js",
+    "dev":"npx nodemon server.js"
+  },
+  "dependencies": {
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "mongoose": "^9.9.4"
+  }
+}
