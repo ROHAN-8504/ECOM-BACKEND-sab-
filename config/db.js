@@ -6,7 +6,7 @@ let dbconnection=async ()=>{
       await mongoose.connect(process.env.MONGODBURL)
       console.log('db is connected')
     } catch (error) {
-        console.log(error.msg)
+        console.log(error.message)
         process.exit(1)
     }
 
