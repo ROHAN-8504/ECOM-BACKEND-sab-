@@ -2,6 +2,7 @@
 const users=require('../models/usermodel')
 const bcrypt=require('bcrypt')
 const jwt=require('jsonwebtoken')
+let mail=require('../utils/gmail')
 
 let register=async (req,res)=>{
 
@@ -22,7 +23,7 @@ let hashedpassword=await bcrypt.hash(password,10)
 await users.create({name,password:hashedpassword,email,role})
 
 res.status(201).json({msg:"registartion succesfull"})
-
+mail({email});
 } catch (error) {
   res.status(500).json({msg:error.message})
 }
