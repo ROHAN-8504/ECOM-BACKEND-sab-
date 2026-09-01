@@ -12,7 +12,8 @@ try {
 
 let fetchallproducts=async (req,res)=>{
 try {
-let allproducts=await products.find()
+ let maxlimit= req.query.limit
+let allproducts=await products.find().limit(maxlimit)
 res.status(200).json(allproducts)
 } catch (error) {
   res.status(500).json({msg:error.message})

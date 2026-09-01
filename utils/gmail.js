@@ -1,5 +1,5 @@
 const nodemailer=require('nodemailer')
-async function mail(email){
+async function mail(){
 
     let transporter=nodemailer.createTransport({
         service:'gmail',
@@ -11,14 +11,14 @@ async function mail(email){
     
     let message={
         from: process.env.GMAILUSER, // sender address
-        to: email, // list of recipients
+        to: 'chrohankumar8504@gmail.com', // list of recipients
         subject: "ACCOUNT CREATION", // subject line
         text: "Hi your account is created", // plain text body
         html: "<b>Hi your account is created</b>", // HTML body
       }
     
-      await transporter.sendMail(message)
+    await   transporter.sendMail(message)
 
       console.log("sent")
 }
-module.exports=mail
+mail();
